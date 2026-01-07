@@ -2,5 +2,13 @@
     {
         "folder": "aula1",
         "title": "Fundamentos e Ambiente"
+    },
+    {
+        "folder": "aula2",
+        "title": "Conceitos Básicos"
+    },
+    {
+        "folder": "aula3",
+        "title": "Repetição"
     }
 ]
