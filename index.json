@@ -14,5 +14,13 @@
     {
         "folder": "aula4",
         "title": "Sequências"
+    },
+    {
+        "folder": "aula5",
+        "title": "Py5Script"
+    },
+    {
+        "folder": "aula6",
+        "title": "Recursão"
     }
 ]

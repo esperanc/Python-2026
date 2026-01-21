@@ -1,3 +1,9 @@
+#!/usr/bin/env python3
+"""
+Servidor HTTP simples com CORS habilitado. Permite que arquivos
+locais sejam acessados por scripts em outras origens.
+Uso: python3 cors_server.py [porta]
+"""
 from http.server import HTTPServer, SimpleHTTPRequestHandler
 import sys
 

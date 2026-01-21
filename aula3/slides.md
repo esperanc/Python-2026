@@ -149,7 +149,7 @@ while f < 200:
 ```
 :::
 :::col reveal
-:: image { "src": "turtle14.svg" }
+:: image { "src": "turtle14.svg"}
 :::
 
 ---

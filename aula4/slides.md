@@ -254,27 +254,84 @@ xpto[1:1] = ["jkl", "mno"]
 print (xpto) # Imprime ['abc', 'jkl', 'mno', 'def', 'ghi']
 ```
 ---
-# Exercícios:
 
-:::row
-1. Crie a função `primos(n)` que retorna uma lista com os primeiros `n` números primos usando o crivo de Eratóstenes.
+# Vamos praticar!
+
+Crie a função `remove_repetidos(seq)` que retorna uma lista com os elementos de `seq` sem repetições.
 
 ```python
-print (primos(10)) # Imprime [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
+print (remove_repetidos([1, 2, 2, 3, 4, 4, 5])) 
+# Imprime [1, 2, 3, 4, 5]
+```
+<button onclick="window.open('https://jupyterlite.github.io/demo/lab/index.html', '_blank')">Abrir JupyterLite</button>
+
+---
+
+# Matrizes
+
+Listas podem conter listas, formando uma _matriz_.
+
+```python
+matriz = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+print (matriz[1][1]) # Imprime 5
+```
+---
+# Vamos praticar!
+
+Crie a função `transposta(matriz)` que retorna a transposta de uma matriz.
+
+```python
+print (transposta([[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12]])) 
+# Imprime [[1, 4, 7], [2, 5, 8], [3, 6, 9]]
+```
+<button onclick="window.open('https://jupyterlite.github.io/demo/lab/index.html', '_blank')">Abrir JupyterLite</button>
+
+---
+# Você vai errar muito isto!
+:::col
+```python
+a = [1, 2, 3]
+b = a
+b[2] = 4
+print (a) # Imprime [1, 2, 4]
 ```
 
-2. Crie a função `fibonacci(n)` que retorna uma lista com os primeiros `n` números da sequência de Fibonacci.
+Explicação: 
+- `b = a` diz que b e a se referem à mesma lista.
+- **Não quer dizer** que b é uma _cópia_ de a.
+:::
+::: col reveal
+Para fazer uma cópia, podemos usar fatias
 
 ```python
-print (fibonacci(10)) # Imprime [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
-```
-
-3. Crie a função `remove_repetidos(seq)` que retorna uma lista com os elementos de `seq` sem repetições.
-
-```python
-print (remove_repetidos([1, 2, 2, 3, 4, 4, 5])) # Imprime [1, 2, 3, 4, 5]
+a = [1, 2, 3]
+b = a[:]
+b[2] = 4
+print (a) # Imprime [1, 2, 3]
 ```
 :::
+---
+# Exercícios:
+1. Crie a função `primos(n)` que retorna uma lista com os primeiros `n` números primos usando o crivo de Eratóstenes.
+```python
+print (primos(10)) 
+# Imprime [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
+```
+2. Crie a função `fibonacci(n)` que retorna uma lista com os primeiros `n` números da sequência de Fibonacci.
+```python
+print (fibonacci(10)) 
+# Imprime [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
+```
+---
+# Exercícios
+3. Crie a função `mult(a,b)` que retorna a multiplicação das matrizes   `a` e `b`.
+```python
+print (mult([[1, 2], [3, 4]], [[1, 2], [3, 4]])) 
+# Imprime [[7, 10], [15, 22]]
+```
+Dicas: 
+- Crie a função `coluna(m,i)` que retorna a coluna `i`de `m`
+- Crie a função `produto(v1,v2)` que retorna o produto escalar de dois vetores
 ---
 ::: center
 # Obrigado!

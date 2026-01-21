@@ -1,18 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0;url=https://esperanc.github.io/SlideDown?f=https://esperanc.github.io/Python-2026">
-    <script>
-        // Redirect logic to handle sub-paths/parameters if needed
-        const targetBase = "https://esperanc.github.io/SlideDown";
-        const contentUrl = "https://esperanc.github.io/Python-2026";
-        window.location.href = `https://esperanc.github.io/SlideDown/?f=https://esperanc.github.io/Python-2026`
-        //window.location.href = `${targetBase}?f=${contentUrl}`;
-    </script>
-    <title>Redirecting...</title>
-</head>
-<body>
-    <p>Redirecting to presentation viewer...</p>
-</body>
-</html>
+<script>
+// Redirect logic to handle sub-paths/parameters if needed
+const targetBase = "https://esperanc.github.io/SlideDown/index.html";
+const contentUrl = window.location.href;
+window.location.href =`${targetBase}?f=${contentUrl}`;
+</script>
