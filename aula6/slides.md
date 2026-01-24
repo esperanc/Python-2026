@@ -43,6 +43,9 @@ $$
 Uma função é _recursiva_ se ela chama a si mesma 
   - Pode ser de forma direta ou indireta (a função chama outra função, que chama outra função, que chama a primeira função)
 
+---
+# Estrutura de uma função recursiva
+
 Para definir uma função recursiva, precisamos:
 
 1. Definir um ou mais casos base
@@ -139,4 +142,224 @@ def subsequencia(s,t):
     return False
 ```
 :::
- 
+---
+# Exemplo clássico: busca binária
+
+Seja `lst` uma lista ordenada e `x` um elemento.
+
+1. Se `lst` é vazia, `x` não está em `lst`.
+2. Se `lst` tem exatamente um elemento, `x` é esse elemento ou `x` não está na lista.
+3. Se `lst` tem 2 ou mais elementos:
+    - Seja `meio` o índice do elemento do meio da lista
+    - Se `x` < `lst[meio]`:
+      - Então só pode estar em `lst[:meio]`
+    - Senão, só pode estar em `lst[meio:]`
+
+---
+# Busca binária: 1a versão
+```python
+def bb(lista:list, x)-> bool:
+    if len(lista) == 0: return False
+    if len(lista) == 1: return x == lista[0]
+    meio = len(lista)//2
+    if x < lista[meio]: return bb(lista[:meio],x)
+    return bb(lista[meio:],x)
+```
+::: row reveal
+Não é muito legal fazer fatiamento de listas!
+:::
+---
+# Busca binária: 2a versão
+```python
+def busca_binaria (lista : list, x)-> bool:
+    def busca (i,j): # Está em lista[i:j]?
+        if j-i == 0: return False
+        if j-i == 1: return x == lista[i]
+        meio = (i+j)//2
+        if x < lista[meio]: return busca(i,meio)
+        return busca(meio,j)
+    return busca(0,len(lista))
+```
+---
+# Busca binária: 3a versão
+``` python
+def bb_iterativa (lista: list, x) -> bool:
+    i,j = 0, len(lista)
+    while j-i > 1:
+        meio = (i+j)//2
+        if x < lista[meio]: j = meio
+        else: i = meio
+    if j-i == 0: return False
+    return x == lista[i]
+```
+---
+# Padrões recursivos geométricos
+:::col ratio=60%
+O que faz o seguinte código?
+```python
+def setup():
+    tam = min(windowWidth, windowHeight) * 0.9
+    createCanvas(tam, tam)
+    recursivo (0, 0, tam, 5)
+
+def recursivo (x,y,tam,n):
+    if n == 0: 
+        rect (x,y,tam)
+    else:
+        tam /= 2
+        recursivo(x,y,tam,n-1)
+        recursivo(x,y+tam,tam,n-1)
+        recursivo(x+tam,y,tam,n-1)
+```
+:::
+::: reveal col ratio=40% 
+::image src="sierpinski.png"
+:::
+---
+# Padrões recursivos geométricos
+:::col ratio=60%
+E este?
+```python
+def setup():
+    tam = min(windowWidth, windowHeight) * 0.9
+    createCanvas(tam, tam)
+    recursivo (0, 0, tam, 5)
+
+def recursivo (x,y,tam,n):
+    if n == 0: 
+        rect (x,y,tam)
+    else:
+        tam /= 2
+        recursivo(x+tam,y+tam,tam,n-1)
+        recursivo(x,y+tam,tam,n-1)
+        recursivo(x+tam,y,tam,n-1)
+```
+:::
+::: col reveal ratio=40%
+::image src="sierpinski2.png"
+:::
+---
+# Estruturas de dados recursivas
+
+Uma estrutura de dados é _recursiva_ se ela é definida em termos de si mesma.
+
+## Por exemplo: lista
+
+(Não confundir com a lista do Python!)
+
+Uma lista é uma estrutura de dados recursiva definida como:
+
+1. Uma lista vazia
+2. Um elemento seguido de uma lista
+
+---
+# Exemplo: Árvore binária de busca (ABB)
+:::col
+Uma árvore binária de busca (ABB) é uma estrutura de dados recursiva definida como:
+
+1. Uma árvore vazia
+2. Um nó interno com um valor $x$ e duas ABBs à esquerda e à direita, tais que
+    - Todos os valores na árvore esquerda são menores que $x$
+    - Todos os valores na árvore direita são maiores que $x$
+:::
+::: col
+::image src="abb.svg" width="100%"
+:::
+
+---
+# Uma ABB com listas
+
+:::col 
+1. ABB vazia: `[]`
+2. ABB não vazia: `[x, esq, dir]`
+
+Onde `esq` e `dir` são ABBs.
+::: 
+::: col 
+```python
+abb = [
+    6,  
+    [   
+        3, 
+        [   
+            1, 
+            [],            
+            [2, [], []]    
+        ],
+        [   
+            5, 
+            [4, [], []],   
+            []             
+        ]
+    ],
+    [   
+        8,
+        [7, [], []],        
+        [9, [], []]         
+    ]
+]
+```
+:::
+---
+# Busca em uma ABB
+
+Segue diretamente da definição:
+
+```python
+def busca (abb, x):
+    if len(abb) == 0: return False
+    if abb[0] == x: return True
+    if x < abb[0]: return busca(abb[1], x)
+    return busca(abb[2], x)
+```
+---
+# Inserção em uma ABB
+
+1. Se a ABB é vazia, insere o valor
+2. Se o valor é menor que a raiz, insere na subárvore esquerda
+3. Senão, insere na subárvore direita
+
+## Estratégias para implementar:
+
+1. Criar uma cópia da ABB com a novo valor no lugar certo
+2. Modificar a ABB original
+---
+# Implementação com cópia
+
+Nesse caso, podemos até usar tuplas ao invés de listas!
+
+```python
+def insere (abb, x):
+    if len(abb) == 0: return (x, (), ())
+    if x < abb[0]: return (abb[0], insere(abb[1], x), abb[2])
+    return (abb[0], abb[1], insere(abb[2], x))
+```
+---
+# Implementação modificando a ABB original
+
+Segue diretamente da definição:
+```python
+def insere (abb, x):
+    if len(abb) == 0: abb[:]=[x, [], []]
+    if x < abb[0]: insere(abb[1], x)
+    else: insere(abb[2], x)
+```
+--- 
+# Remoção em uma ABB
+
+Um pouco mais difícil!
+
+Precisamos considerar o nó onde está o valor a ser removido.
+
+1. O nó é folha (não tem filhos):
+    - Basta removê-lo
+2. O nó tem um filho:
+    - Basta removê-lo e coloca-lo no lugar
+3. O nó tem dois filhos:
+    - Encontrar um _valor substituto_:
+       - O menor valor da subárvore direita
+       - (ou o maior valor da subárvore esquerda)
+    - Trocar o valor do nó por esse valor substituto
+    - Remover o valor substituto da subárvore
+
+ ---

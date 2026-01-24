@@ -323,8 +323,6 @@ Se precisar instalar pacotes adicionais, usamos o gerenciador do sistema (ex: `a
 :::
 
 ---
-
-
 # O Ambiente Jupyter
 
 O **Jupyter Notebook** é o padrão para Ciência de Dados e ensino.
@@ -344,7 +342,6 @@ Há também instalações no Google Colab e no GitHub.
 :: image { "src": "https://upload.wikimedia.org/wikipedia/commons/3/38/Jupyter_logo.svg", "alt": "Logo Jupyter" }
 :::
 
-
 ---
 
 # JupyterLite
@@ -354,10 +351,21 @@ O **JupyterLite** é uma implementação do Jupyter Notebook que permite rodar P
 Há várias instalações disponíveis do JupyterLite, por exemplo
 - **JupyterLab** (https://jupyter.org/try-jupyter/lab/)
 - Demo do JupyterLite (https://jupyterlite.github.io/demo/lab/index.html 
-
+- Minha instalação no Github: https://esperanc.github.io/jupyterlite/lab/index.html
+  - Tem a vantagem de aceitar o parâmetro "fromURL" que permite carregar um notebook hospedado em algum repositório
+  - Por exemplo: https://esperanc.github.io/jupyterlite/lab/index.html?fromURL=https://raw.githubusercontent.com/esperanc/Python-2026/refs/heads/main/aula3/turtleTest.ipynb
 ---
 
-:: iframe { "src": "https://jupyter.org/try-jupyter/lab/" }
+:: iframe { "src": "https://esperanc.github.io/jupyterlite/lab/index.html?fromURL=https://raw.githubusercontent.com/esperanc/Python-2026/refs/heads/main/aula3/turtleTest.ipynb" }
+
+---
+# O ambiente Py5Script
+
+Alguns dos nossos exercícios e exemplos têm saída gráfica.
+
+Para isso, usaremos o **Py5Script** que permite usar [Processing/P5](https://p5js.org/) em Python direto no navegador.
+
+[Exemplo:](https://esperanc.github.io/Py5Script/view.html?code=MYUwNmAEC8kEwAYBQAnAhgOwCYHsC2MkACgKwB062+SSWIAZpAM4gAuArgA4AUAlAFxJIwyMBQg0rEAGFMANzRNuAdwCWVZQHVVWVgAsANJDUaAEiFUBzPa15CRAIzTAA1pZQ522SNzgkSdiKQGAAehGq6epAA9NGi4GD2whgAnoR6FtasMXGgEEnMrB4uIJqZNj55YNEAjAiBIvQ4KJCqrRiQlJYg3KECBUFhsG0AVPH5QUFNLQBW7Z2Y3b0p-ZNrkGmwc2NVA+uqjJS4eHwAPAhkJILrN5Bg6iA+IQYpBiEA1FUvnwkNt5DgFjXf6Te4YR7cD5fV7PFI-CB-SBAA)
 
 ---
 # Vamos resolver o problema da mediana?
@@ -414,6 +422,16 @@ O que é uma boa solução?
 ::: reveal
 Nem sempre todos os requisitos podem ser atendidos ao mesmo tempo!
 :::
+---
+# E no caso da nossa solução?
+
+- Bastante boa!
+- Mas não usa o melhor algoritmo _teórico_
+  - Justificativa: É um algoritmo $O(n \log n)$ e o melhor algoritmo teórico é $O(n)$
+    - Não vamos estudar notação $O$ para complexidade assintótica neste curso!
+  - Uma discussão mais aprofundada sobre isso está disponível em
+  [https://rcoh.me/posts/linear-time-median-finding/
+
 ---
 ::: center
 # Obrigado!
