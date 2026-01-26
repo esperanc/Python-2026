@@ -46,8 +46,18 @@ print ("Olá, Mundo!")
 # Booleanos
 print (True)
 print (False)
-```
 
+# None (um tipo nulo!)
+print (None)
+```
+---
+# O que é `print`?
+
+O `print` é uma função que exibe um ou mais valores.
+
+Normalmente não é necessário usá-la, mas ela é útil para depurar o código, ou seja, para verificar se o código está funcionando corretamente.
+
+No console, ela exibe o valor na linha seguinte ao código.
 ---
 
 # Expressões
@@ -63,60 +73,117 @@ print (1 // 5) # Divisão inteira
 print (1 % 5) # Resto da divisão
 print (2 ** 5) # Potência
 ```
+---
+# Inteiros e reais
+
+Números inteiros e reais (ponto-flutuante) comportam-se diferentemente e são representados de forma diferente.
+
+```python
+print (1/2) # 0.5
+print (1//2) # 0
+print (1.0 // 2) # 0.0
+print (1.0 / 2) # 0.5
+print (1.0 % 2) # 1.0
+print (1 % 2) # 1
+```
+---
+# Precedência de operadores
+
+As operações são executadas da esquerda para a direita.
+
+Alguns operadores têm precedência sobre outros.
+
+1. Parênteses `()`
+2. Potência `**`
+3. Operadores unários: `+` e `-`
+4. Multiplicação `*`, divisão `/`, divisão inteira `//` e resto `%`
+5. Adição `+` e subtração `-`
 
 ---
+# Exemplos
 
-# Operadores
+```python
+print (2 + 3 * 4) # 14
+print ((2 + 3) * 4) # 20
+print (-3 ** 2) # -9
+print ((-3) ** 2) # 9
+print (6 / 3 % 5) # 2.0
+print (2 ** 3 ** 2) # 512
+print ((2 ** 3) ** 2) # 64
+```
+---
 
-- Aritméticos:
-  -  `+` (adição), `-` (subtração), `*` (multiplicação), `/` (divisão), `//` (divisão inteira), `%` (resto da divisão)
-  - operandos são valores numéricos
-  - resultado é um valor numérico
+# Outros operadores
+
+Os operadores aritméticos operam sobre números e resultam em números. Além desses, temos
 - Relacionais: 
-  - `==` (igualdade), `!=` (diferença), `>` (maior), `<` (menor), `>=` (maior ou igual), `<=` (menor ou igual)
-  - operandos são valores numéricos ou strings
-  - resultado é um valor booleano
+  - `==` (igualdade), `!=` (diferença),
+  - `is` (idêntico), `is not` (não idêntico), 
+  - `>` (maior), `<` (menor), `>=` (maior ou igual), `<=` (menor ou igual),
+  - `in` (pertence), `not in` (não pertence)
+  - operandos são valores quaisquer (ex.: números ou strings)
+  - resultado é um valor booleano (`True` ou `False`)
 - Lógicos: 
-  - and (e), or (ou), not (não)
+  - `and` (e), `or` (ou), `not` (não)
   - operandos são valores booleanos
   - resultado é um valor booleano
 
----
-::: center
-# Vamos praticar!
-<button onclick="window.open('https://jupyterlite.github.io/demo/lab/index.html', '_blank')">Abrir JupyterLite</button>
-:::
+--- 
+# Exemplos
 
+```python
+print (1+2 > 3) # False
+print (1+2 >= 3) # True
+print (1+2 < 3 and 1+2 == 3) # False
+print (1+2 < 3 or 1+2 == 3) # True
+print (not (1+2 == 3)) # False
+print (1+2 is 3) # True
+print (1+2 is 3.0) # False
+print (1 in (1, 2, 3)) # True
+print (1 in (1.0, 2, 3)) # True
+```
 ---
 # Variáveis
 
 São nomes que representam valores. 
 
+Um nome válido deve:
+- Ter letras, números e `_`
+- Não pode começar com números
+- Não pode ser uma palavra reservada
+
 Definimos uma variável atribuindo um valor a ela. 
 
 O comando de _atribuição_ é da forma 
 
-> _nome_ = _expressão_
+```python
+nome = expressão
+```
 
 Por exemplo: 
 
 ```python
 x = 1
 y = 2 + x
-print (y)  # resultado 3
+```
+--- 
+# Atribuição com operadores
+
+Existe uma forma mais compacta de escrever algumas atribuições:
+
+```python
+x = x + 1
+y = y / z
+```
+
+podem ser escritas como:
+
+```python
+x += 1
+y /= z
 ```
 ---
-# E o `print`?
-
-O `print` é uma função que exibe um ou mais valores.
-
-Normalmente não é necessário usá-lo, mas ele é útil para depurar o código, ou seja, para verificar se o código está funcionando corretamente.
-
-No console, ele exibe o valor na linha seguinte ao código.
-
----
 #  `if` simples
-
 ```python
 if condição:
     instrução
@@ -206,8 +273,11 @@ if condição 1:
     instrução # se a condição 1 for verdadeira
 elif condição 2:
     instrução # se a condição 1 for falsa e a condição 2 for verdadeira
+...
+elif condição n:
+    instrução # se todas as anteriores forem falsas e esta verdadeira
 else:
-    instrução # se as duas condições forem falsas
+    instrução # se todas forem falsas
 ```
 ---
 # Exemplo
@@ -295,6 +365,38 @@ def saudacao(nome):
 saudacao("Claudio")
 print (nome) # Erro!
 ```
+--- 
+# Parâmetros opcionais
+
+Parâmetros podem ser opcionais, se forem declarados com um valor padrão (_"default"_).
+
+```python
+def saudacao(nome, chamada="Olá"):
+    print (chamada + ", " + nome)
+
+saudacao("Claudio")
+saudacao("Maria", "Oi")
+saudacao("João", "E aí")
+```
+
+Como os parâmetros são passados em ordem, apenas os últimos podem ser opcionais.
+---
+# Passando parâmetros por nome
+
+Podemos passar parâmetros por nome, isto é, não precisamos passar os parâmetros na ordem em que foram declarados.
+
+```python
+def saudacao(nome, chamada="Olá"):
+    print (chamada + ", " + nome)
+
+saudacao("Claudio")
+saudacao(chamada="Oi", nome="Maria")
+saudacao("Claudio", chamada="E aí")
+```
+Uma vez que passamos um parâmetro por nome, todos os parâmetros seguintes devem ser passados por nome.
+```python
+saudacao(chamada="Oi", "Maria") # inválido
+```
 ---
 # `return`
 
@@ -370,7 +472,10 @@ que receba como parâmetros
 - um círculo com centro em `cx`, `cy` e raio `r`,
 
 e retorne `True` se o ponto está dentro do círculo ou `False` caso contrário.
-
+---
+:::center
+# Até a próxima!
+:::
 
 
 

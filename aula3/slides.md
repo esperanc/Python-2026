@@ -42,7 +42,7 @@ forward(100)
 ```
 :::
 :::col
-:: image { "src": "turtle01.svg" }
+:: image  src="turtle01.svg" width="80%"
 :::
 :::
 
@@ -65,7 +65,7 @@ left(90)
 ```
 :::
 ::: col
-:: image { "src": "turtle02.svg" }
+:: image src="turtle02.svg" width="80%"
 :::
 ::: 
 
@@ -119,7 +119,7 @@ for i in range(20):
 ```
 :::
 ::: col reveal
-:: image { "src": "turtle03.svg", "width": "400" }
+:: image src="turtle03.svg" width="80%"
 :::
 :::
 ---
@@ -149,7 +149,7 @@ while f < 200:
 ```
 :::
 :::col reveal
-:: image { "src": "turtle14.svg"}
+:: image src="turtle14.svg" width="80%"
 :::
 
 ---
@@ -172,7 +172,7 @@ quadrado(100)
 ```
 :::
 :::col reveal
-:: image { "src": "turtle04.svg"}
+:: image src="turtle04.svg" width="80%"
 :::
 :::
 ---
@@ -193,7 +193,7 @@ poligono(70,6)
 ```
 :::
 :::col reveal
-:: image { "src": "turtle05.svg"}
+:: image src="turtle05.svg" width="80%"
 :::
 :::
 
@@ -289,10 +289,10 @@ poligono(lado=50, n=4)
 Eis dois desenhos feitos com uma função "misteriosa", mas que foram chamadas com argumentos diferentes. Dê nome a função, colocando uma docstring apropriada e type hints. Dica: o comando `right` gira a tartaruga para a direita!
 
 :::col
-:: image { "src": "turtle06.svg" }
+:: image src="turtle06.svg" width="80%"
 :::
 :::col
-:: image { "src": "turtle07.svg" }
+:: image src="turtle07.svg" width="80%"
 :::
 ---
 ::: center
@@ -347,7 +347,7 @@ Exemplo:
 petala (90, 90)
 petala (80, 120)
 ```
-:: image { "src": "turtle09.svg" }
+:: image src="turtle09.svg" width="70%"
 :::
 
 ---
@@ -361,7 +361,7 @@ Dicas
 
 :::
 ::: col
-:: image { "src": "turtle10.svg" }
+:: image src="turtle10.svg" width="80%"
 :::
 --- 
 # Mais comandos de tartaruga
@@ -389,7 +389,7 @@ caixa (200,150)
 
 :::
 :::col
-:: image { "src": "turtle11.svg" }
+:: image src="turtle11.svg" width="80%"
 :::
 ---
 # Exercício
@@ -412,11 +412,19 @@ def caixas_aninhadas(largura, altura, n):
 ```python
 caixas_aninhadas (200,150,5)
 ```
-:: image { "src": "turtle12.svg" }
+:: image src="turtle12.svg" width="80%"
 :::
 :::col 
 ```python
 caixas_aninhadas(150,200,4)
 ```
-:: image { "src": "turtle13.svg" }
+:: image src="turtle13.svg" width="80%"
+:::
+---
+::: center
+[->Código para os exercícios](https://esperanc.github.io/jupyterlite/lab/index.html?fromURL=https://raw.githubusercontent.com/esperanc/Python-2026/refs/heads/main/aula3/turtleTest.ipynb)
+:::
+---
+:::center   
+# Até a próxima!
 :::

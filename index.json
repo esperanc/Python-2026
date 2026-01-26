@@ -1,26 +1,30 @@
-[
-    {
-        "folder": "aula1",
-        "title": "Fundamentos e Ambiente"
-    },
-    {
-        "folder": "aula2",
-        "title": "Conceitos Básicos"
-    },
-    {
-        "folder": "aula3",
-        "title": "Repetição"
-    },
-    {
-        "folder": "aula4",
-        "title": "Sequências"
-    },
-    {
-        "folder": "aula5",
-        "title": "Py5Script"
-    },
-    {
-        "folder": "aula6",
-        "title": "Recursão"
-    }
-]
+{
+    "title": "Python 2026",
+    "subtitle": "Apresentações disponíveis:",
+    "presentations": [
+        {
+            "folder": "aula1",
+            "title": "Fundamentos e Ambiente"
+        },
+        {
+            "folder": "aula2",
+            "title": "Conceitos Básicos"
+        },
+        {
+            "folder": "aula3",
+            "title": "Repetição"
+        },
+        {
+            "folder": "aula4",
+            "title": "Sequências"
+        },
+        {
+            "folder": "aula5",
+            "title": "Py5Script"
+        },
+        {
+            "folder": "aula6",
+            "title": "Recursão"
+        }
+    ]
+}

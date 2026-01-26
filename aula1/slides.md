@@ -226,7 +226,7 @@ Por que escolhemos Python para começar?
 :::
 
 ::: col
-:: image { "src": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg", "alt": "Logo Python" }
+:: image { "src": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg", "alt": "Logo Python", "width": "50%" }
 :::
 :::
 :::
@@ -318,7 +318,7 @@ Se precisar instalar pacotes adicionais, usamos o gerenciador do sistema (ex: `a
 :::
 
 ::: col
-:: image { "src": "https://images.unsplash.com/photo-1629654297299-c8506221ca97?auto=format&fit=crop&w=800", "alt": "Terminal Linux" }
+:: image { "src": "https://images.unsplash.com/photo-1629654297299-c8506221ca97?auto=format&fit=crop&w=800", "alt": "Terminal Linux", "width": "90%" }
 :::
 :::
 
@@ -339,7 +339,7 @@ Há também instalações no Google Colab e no GitHub.
 :::
 
 ::: col
-:: image { "src": "https://upload.wikimedia.org/wikipedia/commons/3/38/Jupyter_logo.svg", "alt": "Logo Jupyter" }
+:: image { "src": "https://upload.wikimedia.org/wikipedia/commons/3/38/Jupyter_logo.svg", "alt": "Logo Jupyter", "width": "80%" }
 :::
 
 ---
@@ -354,9 +354,6 @@ Há várias instalações disponíveis do JupyterLite, por exemplo
 - Minha instalação no Github: https://esperanc.github.io/jupyterlite/lab/index.html
   - Tem a vantagem de aceitar o parâmetro "fromURL" que permite carregar um notebook hospedado em algum repositório
   - Por exemplo: https://esperanc.github.io/jupyterlite/lab/index.html?fromURL=https://raw.githubusercontent.com/esperanc/Python-2026/refs/heads/main/aula3/turtleTest.ipynb
----
-
-:: iframe { "src": "https://esperanc.github.io/jupyterlite/lab/index.html?fromURL=https://raw.githubusercontent.com/esperanc/Python-2026/refs/heads/main/aula3/turtleTest.ipynb" }
 
 ---
 # O ambiente Py5Script
@@ -365,7 +362,7 @@ Alguns dos nossos exercícios e exemplos têm saída gráfica.
 
 Para isso, usaremos o **Py5Script** que permite usar [Processing/P5](https://p5js.org/) em Python direto no navegador.
 
-[Exemplo:](https://esperanc.github.io/Py5Script/view.html?code=MYUwNmAEC8kEwAYBQAnAhgOwCYHsC2MkACgKwB062+SSWIAZpAM4gAuArgA4AUAlAFxJIwyMBQg0rEAGFMANzRNuAdwCWVZQHVVWVgAsANJDUaAEiFUBzPa15CRAIzTAA1pZQ522SNzgkSdiKQGAAehGq6epAA9NGi4GD2whgAnoR6FtasMXGgEEnMrB4uIJqZNj55YNEAjAiBIvQ4KJCqrRiQlJYg3KECBUFhsG0AVPH5QUFNLQBW7Z2Y3b0p-ZNrkGmwc2NVA+uqjJS4eHwAPAhkJILrN5Bg6iA+IQYpBiEA1FUvnwkNt5DgFjXf6Te4YR7cD5fV7PFI-CB-SBAA)
+Link para o Py5Script: https://esperanc.github.io/Py5Script
 
 ---
 # Vamos resolver o problema da mediana?
