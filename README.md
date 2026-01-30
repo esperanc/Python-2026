@@ -4,4 +4,4 @@ Este repositório contém os materiais para aulas de introdução à programaç�
 
 Acesse os slides no navegador através da URL:
 
-esperanc.github.io/Python-2026
+https://esperanc.github.io/Python-2026

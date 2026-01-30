@@ -362,4 +362,41 @@ Precisamos considerar o nó onde está o valor a ser removido.
     - Trocar o valor do nó por esse valor substituto
     - Remover o valor substituto da subárvore
 
- ---
+---
+# Percorrendo ABBs
+
+Podemos percorrer uma ABB de forma recursiva, visitando cada nó e seus descendentes esquerdo/direito.
+
+Existem três maneiras de fazer isso:
+
+1. **Pré-ordem**: raiz, esquerda, direita
+2. **Em-ordem**: esquerda, raiz, direita
+3. **Pós-ordem**: esquerda, direita, raiz
+
+O percurso **em-ordem** é bastante útil pois visita os nós em ordem crescente! (por quê?)
+---
+# ABBs e Ordenação
+
+Uma ABB pode ser usada para ordenar uma lista:
+1. Inserimos todos os elementos na ABB
+2. Percorremos a ABB em-ordem colocando o resultado em uma lista vazia.
+
+```python
+def visita_em_ordem(abb, lista):
+    if len(abb)>0:
+        visita_em_ordem(abb[1],lista)
+        lista[len(lista):]=[abb[0]]
+        visita_em_ordem(abb[2],lista)
+        
+def ordena_com_abb(lista):
+    abb = []
+    for x in lista: 
+        insere_abb(abb,x)
+    lista = []
+```
+---
+:::center
+# Até a próxima!
+:::
+
+

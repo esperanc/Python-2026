@@ -11,10 +11,20 @@ class CORSRequestHandler(SimpleHTTPRequestHandler):
     def end_headers(self):
         # Allow requests from any origin
         self.send_header('Access-Control-Allow-Origin', '*')
-        # Ideally, also allow common methods
-        self.send_header('Access-Control-Allow-Methods', 'GET')
+        # Allow common methods
+        self.send_header('Access-Control-Allow-Methods', 'GET, OPTIONS')
+        # Required for Private Network Access (CORS-RFC1918)
+        # This allows public websites to access localhost
+        self.send_header('Access-Control-Allow-Private-Network', 'true')
+        # Allow headers that might be requested
+        self.send_header('Access-Control-Allow-Headers', '*')
         self.send_header('Cache-Control', 'no-store, no-cache, must-revalidate')
         return super().end_headers()
+    
+    def do_OPTIONS(self):
+        # Handle preflight requests
+        self.send_response(200)
+        self.end_headers()
 
 if __name__ == '__main__':
     # usage: python cors_server.py [port]

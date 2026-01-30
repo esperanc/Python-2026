@@ -153,6 +153,11 @@ print (abc[:5]) # Imprime abcde
 print (abc[:]) # Imprime abcdefg
 ```
 ---
+# Fatias com índices negativos
+
+Um índice negativo pode ser usado para contar posições de trás para frente
+
+---
 # Fatias com incremento
 
 Fatias podem ter um terceiro argumento que indica o incremento. Se não indicado, é assumido 1.
@@ -254,19 +259,42 @@ xpto[1:1] = ["jkl", "mno"]
 print (xpto) # Imprime ['abc', 'jkl', 'mno', 'def', 'ghi']
 ```
 ---
-
-# Vamos praticar!
-
-Crie a função `remove_repetidos(seq)` que retorna uma lista com os elementos de `seq` sem repetições.
+# Inserção e remoção - funções
 
 ```python
-print (remove_repetidos([1, 2, 2, 3, 4, 4, 5])) 
-# Imprime [1, 2, 3, 4, 5]
+def insere (lista:list, posicao:int, valor) -> None:
+    """Insere valor em lista[posicao]"""
+    lista[posicao:posicao]=[valor]
+
+def remove (lista:list, posicao:int) -> any:
+    """Remove de lista o elemento na posicao dada e o retorna"""
+    x = lista[posicao]
+    lista[posicao:posicao+1] = []
+    return x
 ```
-<button onclick="window.open('https://jupyterlite.github.io/demo/lab/index.html', '_blank')">Abrir JupyterLite</button>
+---
+# Métodos de listas
+Listas, como muitos outros _objetos_ em Python, possuem _métodos_. 
+
+Um método é uma função que está associada a um objeto.
+
+Por exemplo:
+- `lista.insert(i,valor)` é o mesmo que `insere(lista, i, valor)`
+- `lista.append(valor)` é o mesmo que `insere(lista, len(lista), valor)`
+- `lista.pop(i)` é o mesmo que `remove(lista, i)`
+   - Uma diferença: é possível não passar o argumento para `pop`
+   - Se não for passado o argumento, remove o _último_ elemento
+   - Existe um atalho para pop: `del lista[i]`
+---
+# Uma palavra sobre eficiência!
+
+Usar métodos de listas é mais eficiente do que usar fatias!
+
+Inserção e remoção de elementos no **fim** de uma lista é **muito** mais eficiente do que no início!
+
+(Por quê?)
 
 ---
-
 # Matrizes
 
 Listas podem conter listas, formando uma _matriz_.
@@ -334,7 +362,7 @@ Dicas:
 - Crie a função `produto(v1,v2)` que retorna o produto escalar de dois vetores
 ---
 ::: center
-# Obrigado!
+# Até a próxima!
 :::
 
 
