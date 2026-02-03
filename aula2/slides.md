@@ -87,6 +87,38 @@ print (1.0 % 2) # 1.0
 print (1 % 2) # 1
 ```
 ---
+# Strings (cadeias de caracteres)
+
+Literais strings são caracteres entre aspas (simples ou duplas):
+
+```python
+print ("Oi")
+print ('Oi')
+```
+
+Naturalmente, os caracteres dentro das aspas não podem conter aspas. 
+Mas é possível sinalizar que a string não termina ali precedendo-o com uma barra invertida.
+
+```python
+print ("Oi \"meu chapa\"!")
+```
+---
+# Operadores string
+
+- O operador `+` quando aplicado a strings significa concatenação
+- O operador `*` quando aplicado a uma string e um inteiro significa repetição
+
+```python
+print ("Oi " + '"meu chapa"!') 
+print ('Oi "meu chapa"' + "!"*4)
+```
+Resultado:
+```
+Oi "meu chapa"!
+Oi "meu chapa"!!!!
+```
+
+---
 # Precedência de operadores
 
 As operações são executadas da esquerda para a direita.
@@ -182,6 +214,99 @@ podem ser escritas como:
 x += 1
 y /= z
 ```
+---
+# `input`
+
+Quando executada, a função `input (mensagem)` imprime a mensagem (se houver), suspende a execução do programa, e espera a digitação de uma string como resposta. 
+
+Normalmente usada com atribuição a uma variável:
+
+```python
+nome = input ("Qual seu nome ?")
+print ("Oi ", nome, "!")
+```
+
+Execução:
+
+```
+Qual seu nome ? João
+Oi João!
+```
+---
+# `input` com conversão
+
+Às vezes, é necessário converter o valor de uma string para outro tipo.
+
+:::col 
+```python
+a = input ("Entre com um número: ")
+b = input ("Entre com outro número: ")
+print ("A soma é: ", a + b)
+```
+
+Execução:
+
+```
+Entre com um número: 1.23452352
+Entre com outro número: 2.3456789
+A soma é:  1.234523522.3456789
+```
+:::
+
+:::col reveal
+```python
+a = float (input ("Entre com um número: "))
+b = float (input ("Entre com outro número: "))
+print ("A soma é: ", a + b)
+```
+
+Execução:
+
+```
+Entre com um número: 1.23452352
+Entre com outro número: 2.3456789
+A soma é:  3.58019241
+```
+:::
+---
+# Usando f-strings para imprimir valores
+
+As f-strings (strings formatadas)permitem formatar strings de forma mais flexível. 
+
+Uma f-string é uma string precedida da letra `f` que contém expressões entre chaves `{}`.
+
+```python
+a = float (input ("Entre com um número: "))
+b = float (input ("Entre com outro número: "))
+print (f"A soma é: {a + b}")
+```
+
+Execução:
+
+```
+Entre com um número: 1.23452352
+Entre com outro número: 2.3456789
+A soma é:  3.58019241
+```
+---
+# Número de casas decimais
+
+f-strings têm diversas opções para formatar números. 
+
+Um sinal de ":" depois da expressão indica que se seguem opções de formatação.
+
+Alguns exemplos:
+```python
+print (f"{0.123456:.2f}") # 0.12
+print (f"{0.123456:.3f}") # 0.123
+print (f"{0.123456:.0f}") # 0
+print (f"{0.123456:10.5f}")  #    0.12346
+print (f"{0.123456:010.5f}") # 0000.12346
+```
+---
+::: center
+# Comandos de decisão
+:::
 ---
 #  `if` simples
 ```python

@@ -153,9 +153,15 @@ print (abc[:5]) # Imprime abcde
 print (abc[:]) # Imprime abcdefg
 ```
 ---
-# Fatias com índices negativos
+# Índices negativos
 
-Um índice negativo pode ser usado para contar posições de trás para frente
+Um índice negativo pode ser usado para contar posições de trás para frente.
+
+Por exemplo: 
+- `"abcde"[-1]` é o mesmo que `"e"`
+- `(0,1,2,3,4)[-2]` é o mesmo que `3`
+- `(1,2,3,4,5)[-2:]` é o mesmo que `[4,5]`
+- `"abcde"[-4:-2]` é o mesmo que `"bc"`
 
 ---
 # Fatias com incremento
@@ -271,12 +277,13 @@ def remove (lista:list, posicao:int) -> any:
     x = lista[posicao]
     lista[posicao:posicao+1] = []
     return x
-```
 ---
 # Métodos de listas
 Listas, como muitos outros _objetos_ em Python, possuem _métodos_. 
 
-Um método é uma função que está associada a um objeto.
+Um método é uma função que está associada a um objeto. 
+
+Um método é chamado com a sintaxe `objeto.metodo(argumentos)`.
 
 Por exemplo:
 - `lista.insert(i,valor)` é o mesmo que `insere(lista, i, valor)`
@@ -285,6 +292,20 @@ Por exemplo:
    - Uma diferença: é possível não passar o argumento para `pop`
    - Se não for passado o argumento, remove o _último_ elemento
    - Existe um atalho para pop: `del lista[i]`
+---
+# Exemplos:
+
+```python
+lista = [1,2,3]
+lista.insert(1,4)
+print (lista) # Imprime [1, 4, 2, 3]
+lista.append(99)
+print (lista) # Imprime [1, 4, 2, 3, 99]
+x = lista.pop(2)
+print (lista) # Imprime [1, 4, 3, 99]
+print (x) # Imprime 2
+```
+
 ---
 # Uma palavra sobre eficiência!
 
@@ -297,7 +318,9 @@ Inserção e remoção de elementos no **fim** de uma lista é **muito** mais ef
 ---
 # Matrizes
 
-Listas podem conter listas, formando uma _matriz_.
+Listas podem conter listas.
+
+Uma lista de listas de números é uma _matriz_.
 
 ```python
 matriz = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
@@ -340,11 +363,12 @@ print (a) # Imprime [1, 2, 3]
 :::
 ---
 # Exercícios:
-1. Crie a função `primos(n)` que retorna uma lista com os primeiros `n` números primos usando o crivo de Eratóstenes.
+1. Crie a função `primos(n)` que retorna uma lista com os todos os números primos até `n`,usando o [_crivo de Eratóstenes_](https://pt.wikipedia.org/wiki/Crivo_de_Erat%C3%B3stenes).
 ```python
-print (primos(10)) 
-# Imprime [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
+print (primos(40)) 
+# Imprime [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37]
 ```
+
 2. Crie a função `fibonacci(n)` que retorna uma lista com os primeiros `n` números da sequência de Fibonacci.
 ```python
 print (fibonacci(10)) 
@@ -360,6 +384,10 @@ print (mult([[1, 2], [3, 4]], [[1, 2], [3, 4]]))
 Dicas: 
 - Crie a função `coluna(m,i)` que retorna a coluna `i`de `m`
 - Crie a função `produto(v1,v2)` que retorna o produto escalar de dois vetores
+---
+:::center
+[-> Códigos desta aula](https://esperanc.github.io/jupyterlite/lab/index.html?fromURL=https://raw.githubusercontent.com/esperanc/Python-2026/refs/heads/main/aula4/sequencias.ipynb)
+:::
 ---
 ::: center
 # Até a próxima!

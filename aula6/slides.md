@@ -239,6 +239,30 @@ def recursivo (x,y,tam,n):
 ::image src="sierpinski2.png"
 :::
 ---
+# E este?
+:::col ratio=60%
+```python
+def setup():
+    createCanvas(600, 600)
+    background (0)
+    strokeWeight(2)
+    stroke(255)
+    arvore (300,600,-PI/2,200,9)
+
+def arvore (x,y,ang,tam,n):
+    x2 = x+tam*cos(ang)
+    y2 = y+tam*sin(ang)
+    line(x,y,x2,y2)
+    n -=1
+    if n > 0:
+        arvore(x2,y2,ang-PI/4,tam*0.6,n)
+        arvore(x2,y2,ang+PI/4,tam*0.6,n)
+```
+:::
+::: reveal col ratio=40%  
+::image src="arvore.png" 
+:::
+---
 # Estruturas de dados recursivas
 
 Uma estrutura de dados é _recursiva_ se ela é definida em termos de si mesma.
@@ -394,6 +418,12 @@ def ordena_com_abb(lista):
         insere_abb(abb,x)
     lista = []
 ```
+---
+# Códigos desta aula:
+
+[Estruturas de dados recursivas](https://esperanc.github.io/jupyterlite/lab/index.html?fromURL=https://raw.githubusercontent.com/esperanc/Python-2026/refs/heads/main/aula6/recursao.ipynb)
+[Sierpinski](https://esperanc.github.io/Py5Script/view.html?code=CYUwZgBAziAuCuAHAFASgFwCgI4rAhgLYQC8EhAlgHbIDu1wA9rQOoXCwAWANBPVU1oAJEBQDmnWKggAqCAAYAdAE5suAMYAnEPlggAwvioA3fFGQFCvS6jU5t6+JqgVjjCMnm8veIrwCstpigkA5OLm4eAB7cAJ7cltxUGHYQFJBUpGTy6BCpuBAOsNFxCUS2BSAANjBYBQWWEAD0ZABM+bhhzq6MyFEA1Imxg36JVAC0AIwV9fYgjt1ufXEjVmNTM7NdEb0DQ2VWE9NAA)
+[Arvore](https://esperanc.github.io/Py5Script/view.html?code=CYUwZgBAziAuCuAHAFASgFwCgI4gYwCcQBDWEAYWIDsA3YqZANgAZmAaCF51bXAI2J4A1gHMCAe3hVgEZN144osCUJAB1EAEsRAC1jIATD1zRl41YYCsl47mIEa4orIDMrNlzYBaAAoBJAHoDNgN3AE4eTFBIe0dnZAAPNgBPNmoRNlhiAFs2KgwFCASDCABeIoBqLOyAKjxxBnTbHGSS8uSqnJqoTSpkJsKAG16QRJS2YpSjQqoIL1KARkLNSFmAPghmLBMTWKdRyda0qhFfQIAWTK7mADpGPOadvaJE4KP0iv8Ay+qa2-v8kA)
 ---
 :::center
 # Até a próxima!
