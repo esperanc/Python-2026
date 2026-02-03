@@ -53,6 +53,12 @@ Para alguns problemas, a _eficiência_ do código também é avaliada.
 Quando estiver satisfeito com o código, copie-o e cole no Beecrowd e clique em "Enviar".  
 
 ---
+:::center
+
+[Exemplo de notebook para o beecrowd](https://esperanc.github.io/jupyterlite/lab/index.html?fromURL=https://raw.githubusercontent.com/esperanc/Python-2026/refs/heads/main/aula2b/beecrowd.ipynb)
+
+:::
+---
 # Resultado da submissão
 
 :: image src="beecrowd_submitted.png" width="90%"
